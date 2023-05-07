@@ -1,0 +1,44 @@
+import React from "react";
+import FooterMiddleList from "./FooterMiddleList";
+import { middleList } from "../../constants";
+import { logo, uzbekistan } from "../../assets";
+
+const FooterMiddle = () => {
+  return (
+    <div className="w-full bg-amazon_light text-white">
+      {/* Top start here */}
+      <div className="w-full border-b-[1px] border-gray-500 py-10">
+        <div className="lgl:max-w-5xl max-w-3xl mx-auto text-gray-300">
+          <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 lgl:grid-cols-4 items-start justify-items-start pl-20 lgl:pl-10">
+            {middleList.map((item) => (
+              <FooterMiddleList
+                key={item._id}
+                title={item.title}
+                listItem={item.listItem}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Top end here */}
+      {/* Bottom start here */}
+      <div className="w-full flex gap-6 items-center justify-center py-6">
+        <div>
+          <img className="w-20 pt-3" src={logo} alt="logo" />
+        </div>
+        <div className="flex gap-2">
+          <p className="flex gap-1 items-center justify-center border border-gray-500 hover:border-amazon_yellow cursor-pointer duration-200 px-2 py-1">
+            English
+          </p>
+        </div>
+        <div className="flex gap-2 items-center justify-center border border-gray-500 hover:border-amazon_yellow cursor-pointer duration-200 px-2 py-1">
+          <img className="w-6" src={uzbekistan} alt="uzbekistan" />
+          <p>Uzbekistan</p>
+        </div>
+      </div>
+      {/* Bottom end here */}
+    </div>
+  );
+};
+
+export default FooterMiddle;
